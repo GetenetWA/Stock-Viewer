@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Stock Growth Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> | 
+        <a href="about.html">About</a> | 
+        <a href="app.html">Simulator</a>
+    </nav>
+
+    <header class="hero-section">
+        <h1 class="animate-text">Market Predictor Pro</h1>
+        <p class="animate-text">Track your favorite stocks and simulate $100 growth scenarios.</p>
+        <a href="app.html" class="btn-primary">Start Simulating</a>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Your Saved Watchlist</h2>
+            <p>Real-time updates for your saved tickers:</p>
+            
+            <div class="info-card" style="border-left-color: #e67e22; background: #fff5eb; margin-bottom: 15px;">
+                <p style="font-size: 0.9rem; color: #d35400; margin: 0;">
+                    <strong>Note on API Limitations:</strong> The free tier of the Alpha Vantage API may limit watchlist updates and calculations in real-time. Prices may default to $100 or show "Limit".
+                </p>
+            </div>
+
+            <ul id="watchlist">
+                <li>Loading your watchlist...</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Hero Animation
+        anime({
+            targets: '.animate-text',
+            translateY: [30, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200),
+            easing: 'easeOutExpo'
+        });
+    </script>
+</body>
+</html>
+

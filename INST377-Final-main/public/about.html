@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Stock Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        /* Ensuring the disclaimer looks distinct but integrated */
+        .disclaimer {
+            margin-top: 15px;
+            padding: 10px;
+            border-left: 3px solid #ffcc00; /* Subtle warning color */
+            background: rgba(255, 204, 0, 0.1);
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .math-block {
+            text-align: center;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: "Times New Roman", serif;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a> | <a href="about.html">About</a> | <a href="app.html">Dashboard</a>
+    </nav>
+
+    <div class="container">
+        <h1 class="animate-target">About This Project</h1>
+        
+        <section class="info-card animate-target">
+            <h2>The Mission</h2>
+            <p>Developed for INST 377, this application serves as a Financial Growth Simulator. It empowers users to visualize the real-world impact of a $100 investment over time, moving beyond simple price tracking into meaningful data analysis.</p>
+            
+            <div class="disclaimer animate-target">
+                <strong>Note on API Limitations:</strong> The free tier of the Alpha Vantage API may limit watchlist updates and calculations in real-time(leaving the predicted price at $100), though the underlying logic remains functional.
+            </div>
+        </section>
+
+        <section class="info-card animate-target">
+            <h2>The Tech Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item"><strong>Backend:</strong> Node.js & Express.js</div>
+                <div class="tech-item"><strong>Database:</strong> Supabase (PostgreSQL)</div>
+                <div class="tech-item"><strong>External API:</strong> Alpha Vantage</div>
+                <div class="tech-item"><strong>Visualization:</strong> Chart.js</div>
+            </div>
+        </section>
+
+        <section class="info-card animate-target">
+            <h2>Mathematical Implementation</h2>
+            <p>The core logic utilizes a time-series calculation to determine Return on Investment (ROI):</p>
+            <div class="math-block">
+                $V_{current} = 100 \times \left( \frac{P_{current}}{P_{initial}} \right)$
+            </div>
+        </section>
+    </div>
+
+    <script>       
+        anime({
+            targets: '.animate-target',
+            translateY: [30, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200), 
+            easing: 'easeOutQuad',
+            duration: 1000
+        });
+    </script>
+</body>
+</html>
+
